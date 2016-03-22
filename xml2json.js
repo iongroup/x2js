@@ -260,7 +260,7 @@
 				if(result["#text"]!=null) {
 					result.__text = result["#text"];
 					if(result.__text instanceof Array) {
-						result.__text = result.__text.join("\n");
+						result.__text = result.__text.join(""); // Workaround for IE11 bug, that split text each hypen ('-'). For strict XMLs, we can safely join texts without blanks.
 					}
 					//if(config.escapeMode)
 					//	result.__text = unescapeXmlChars(result.__text);
